@@ -63,6 +63,7 @@ class SimpleConverter;
         NSString *config = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:json];
         const std::string *c = new std::string([config UTF8String]);
         simpleConverter = new opencc::SimpleConverter(*c);
+        delete c;
     }
     return self;
 }
